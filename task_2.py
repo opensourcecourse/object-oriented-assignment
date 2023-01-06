@@ -1,6 +1,4 @@
-"""
-A module which implements a gloriously inefficient 1D array class.
-"""
+"""A module which implements a gloriously inefficient 1D array class."""
 
 
 class IncompatibleArrayOperationError(ValueError):
@@ -12,6 +10,4 @@ class InvalidEntryError(ValueError):
 
 
 class Array1D:
-    """
-    This class behaves similar to numpy arrays, but for one dimension.
-    """
+    """Class that behaves similar to numpy arrays, but for 1D data."""

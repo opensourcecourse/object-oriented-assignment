@@ -1,14 +1,20 @@
 # Object-Oriented assignment
 
-The goal of this assignment is not to make you an expert in OO design (easily a full semester course)
-but to introduce you to some basic OO features of python.
+Object-oriented programming and design is an extensive topic (most universities offer a full
+semester course). The goal of this assignment is not to make you an expert but to introduce
+you to some basic OO features of python.
+
+Once you have completed both tasks, create a new branch, push to origin, and open
+a pull request. You can check the status of the GH actions (a separate window will
+be inserted in the PR screen) to see how your implementation is doing. Remember what
+you learned from the style assignment, readability still counts.
 
 
 # Task 1: Fun with classes (5 pts)
 
 Look at `task_1.py` and fill in the implementations indicated by the comments.
-You can run `pytest test_task_1.py` to see if your implementations are meeting
-the specifications.
+Next, run `pytest test_task_1.py` to see if your implementations are meeting
+the specifications. Fix the issues until all the tests pass.
 
 # Task 2: 1D array (20 points)
 

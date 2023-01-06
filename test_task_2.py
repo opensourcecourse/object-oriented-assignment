@@ -5,7 +5,7 @@ You need to first install pytest, then run this from the command line
 via: `pytest test_task_1.py`
 """
 import sys
-from operator import add, sub, truediv, floordiv, mul, pow
+from operator import add, floordiv, mul, pow, sub, truediv
 
 import pandas as pd
 import pytest
@@ -47,14 +47,14 @@ class TestInit:
         assert isinstance(ar, Array1D)
 
     def test_nested_list_raises(self):
-        """A nested list should raise, only supports 1D"""
+        """A nested list should raise, only supports 1D."""
         bad_input = [1, 2, [2, 3]]
         with pytest.raises(InvalidEntryError):
             Array1D(bad_input)
 
 
 class TestSequence:
-    """Tests for the sequenceyness of Arrray1D"""
+    """Tests for the 'sequenceyness' of Arrray1D."""
 
     def test_to_list(self, array_input):
         """The conversion to and from a list should be lossless."""
@@ -78,6 +78,7 @@ class TestSequence:
             assert el in array
 
     def test_slice(self):
+        """Ensure a slice from the array returns a sub array."""
         array_inp = INPUT_ARRAYS[0]
         array = Array1D(array_inp)
         array_slice = array[1:-2]
@@ -115,7 +116,7 @@ class TestArithmetic:
                 assert el1 == op(el2, el2)
 
     def test_uneven_array_raises(self, array_input):
-        """Arrays of different lengths should not be compatible"""
+        """Arrays of different lengths should not be compatible."""
         array1 = Array1D(array_input)
         array2 = Array1D(array_input[:-1])
 

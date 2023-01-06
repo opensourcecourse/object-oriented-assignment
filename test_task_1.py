@@ -1,8 +1,6 @@
-"""
-Tests for task 1.
-"""
+"""Tests for task 1."""
 
-from task_1 import HelicopterParent, Getter, Setter, RichParent, ChildMoocher
+from task_1 import ChildMoocher, Getter, HelicopterParent, RichParent, Setter
 
 
 class TestHelicopterParent:
@@ -21,6 +19,7 @@ class TestGetter:
     """Tests for dynamic attributes."""
 
     def test_c_updates(self):
+        """Ensure c updates when a or b are changed."""
         get = Getter(a=2, b=2)
         assert get.c == 4
         # ensure changing a also updates c
@@ -35,6 +34,7 @@ class TestSetter:
     """Test previous values stored."""
 
     def test_list_changes_size(self):
+        """Ensure the logging list changes size."""
         set = Setter(a=10)
         assert len(set.old_values_of_a) == 0
         # now update a
@@ -49,7 +49,7 @@ class TestSpoiledKids:
     """Test inheritance between rich parent and moocher child."""
 
     def sum_assets(self, obj):
-        """Helper function to sum up assets"""
+        """Sum up asset value."""
         out = []
         for name in dir(obj):
             if name.startswith("assert_"):
@@ -75,8 +75,7 @@ class TestSpoiledKids:
         assert child.get_net_worth() == parent.get_net_worth() / child.siblings
 
     def test_child_networth_actually_calls_parent_net_worth(self, monkeypatch):
-        """Test child.get_net_worth actually calls parent.get_net_worth"""
-
+        """Test child.get_net_worth actually calls parent.get_net_worth."""
         state = {"call_count": 0}
 
         def instrument(func):

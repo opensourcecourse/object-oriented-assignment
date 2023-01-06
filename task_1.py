@@ -1,6 +1,8 @@
 """
-Second task of OO project. Simply fill in some implementation details
-to learn about other important OO features.
+Second task of OO project.
+
+Simply fill in some implementation details to learn about other important
+OO features.
 """
 
 
@@ -47,7 +49,7 @@ class RichParent:
 
 
 class ChildMoocher(RichParent):
-    """A child that inerhits too much"""
+    """A child class that inherits too much."""
 
     siblings = 3
 
