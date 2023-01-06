@@ -37,7 +37,7 @@ class Setter:
 
 
 class RichParent:
-    """A parent."""
+    """A parent with lots of money."""
 
     asset_1 = 10_000
     asset_2 = 200_000
