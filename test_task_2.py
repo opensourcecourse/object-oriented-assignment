@@ -7,7 +7,6 @@ via: `pytest test_task_1.py`
 import sys
 from operator import add, floordiv, mul, pow, sub, truediv
 
-import pandas as pd
 import pytest
 
 from task_2 import Array1D, IncompatibleArrayOperationError, InvalidEntryError
@@ -28,7 +27,7 @@ def array_input(request):
     return request.param
 
 
-def test_numpy_not_in_loaded_modules(self):
+def test_numpy_not_in_loaded_modules():
     """Numpy should not be in the imported modules."""
     assert "numpy" not in sys.modules
 
@@ -83,7 +82,7 @@ class TestSequence:
         array = Array1D(array_inp)
         array_slice = array[1:-2]
         assert isinstance(array_slice, Array1D)
-        assert list(array_slice) == array_inp[1:-2]
+        assert list(array_slice) == list(array_inp[1:-2])
 
 
 class TestRepresentation:
@@ -113,7 +112,10 @@ class TestArithmetic:
         for op in self.operators:
             result = op(array, array)
             for el1, el2 in zip(result, array):
-                assert el1 == op(el2, el2)
+                try:
+                    assert el1 == op(el2, el2)
+                except (ZeroDivisionError, TypeError):
+                    assert el1 is None
 
     def test_uneven_array_raises(self, array_input):
         """Arrays of different lengths should not be compatible."""
@@ -133,6 +135,6 @@ class TestArithmetic:
         null_array = Array1D([None])
         for op in self.operators:
             result1 = op(array, null_array)
-            assert all([pd.isnull(x) for x in result1])
+            assert all([x is None for x in result1])
             result2 = op(null_array, array)
-            assert all([pd.isnull(x) for x in result2])
+            assert all([x is None for x in result2])

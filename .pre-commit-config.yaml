@@ -12,6 +12,6 @@ repos:
         - flake8-import-order
       args:
         - "-j8"
-        - "--ignore=E203,E501,P103"
+        - "--ignore=E203,E501,P103,D105"
         - "--docstring-convention=numpy"
         - "--import-order-style=edited"

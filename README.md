@@ -9,6 +9,8 @@ a pull request. You can check the status of the GH actions (a separate window wi
 be inserted in the PR screen) to see how your implementation is doing. Remember what
 you learned from the style assignment, readability still counts.
 
+When you are finished with *both* tasks, create a new PR and ping the instructors 
+(@opensourcecourse/instructors).
 
 # Task 1: Fun with classes (5 pts)
 
@@ -23,8 +25,8 @@ For task 2 we will create a 1D array object patterned after numpy's
 disregard efficiency. Start by looking at task_1.py and fill in the implementation to meet the
 following requirements:
 
-
-1. Implement the `__init__` to take a Sequence (tuple, lists, etc.) as the first input argument. 
+1. Implement the `__init__` to optionally take a Sequence (tuple, lists, etc.) as the first input argument.
+   If no input is provided use an empty list as input.
 
 2. Ensure each element is a basic numeric type (float, int, complex, None) else raise InvalidEntryError.
 
@@ -32,13 +34,13 @@ following requirements:
    showing each element. If it is greater than 10 `Array1D[...]`
 
 4. Make sure the Array1D implements the Sequence protocol. Specifically, it should be iterable,
-   indexible, membership checks should work, and slicing should return Array1D instances with a
+   indexible, membership checks should work, and slicing should return Array1D instances with
    a subset of data.
 
 5. Implement operators: add, subtract, true divide, floor divide, power. Each one should work
    with an array of equal size, an array of size 1, or a single number. This should work if
    the array or the number is first. (hint: `__add__` and `__radd__` are both needed). If the
-   array's are not compatible, a IncompatibleArrayOperationError should be raised.
+   arrays are not compatible, a IncompatibleArrayOperationError should be raised.
 
 You can see how your implementation is performing by running `pytest test_task_1.py` after installing
 pytest.
