@@ -1,5 +1,5 @@
 """
-Second task of OO project.
+First task of OO project.
 
 Simply fill in some implementation details to learn about other important
 OO features.
