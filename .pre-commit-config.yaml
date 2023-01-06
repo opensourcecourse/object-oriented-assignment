@@ -15,4 +15,3 @@ repos:
         - "--ignore=E203,E501,P103"
         - "--docstring-convention=numpy"
         - "--import-order-style=edited"
-
