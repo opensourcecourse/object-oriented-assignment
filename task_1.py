@@ -22,7 +22,7 @@ class Getter:
         self.a = a
         self.b = b
 
-    # implement property C to be equal to a + b (even when a or b changes)
+    # implement property c to be equal to a + b (even when a or b changes)
 
 
 class Setter:

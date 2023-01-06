@@ -52,7 +52,7 @@ class TestSpoiledKids:
         """Sum up asset value."""
         out = []
         for name in dir(obj):
-            if name.startswith("assert_"):
+            if name.startswith("asset_"):
                 out.append(getattr(obj, name))
         return sum(out)
 
@@ -79,7 +79,7 @@ class TestSpoiledKids:
         state = {"call_count": 0}
 
         def instrument(func):
-            def _new_func(self, *args, **kwargs):
+            def _new_func(*args, **kwargs):
                 state["call_count"] += 1
                 return func(*args, **kwargs)
 
