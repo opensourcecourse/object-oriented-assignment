@@ -1,0 +1,14 @@
+exclude: scripts/
+repos:
+- repo: https://github.com/PyCQA/flake8
+  rev: 3.8.3
+  hooks:
+  -   id: flake8
+      additional_dependencies:
+        - flake8-black
+        - flake8-breakpoint
+        - flake8-docstrings
+        - pep8-naming
+        - flake8-import-order
+      args: ["-j8", "--ignore=E203,E501,P103", "--docstring-convention=numpy"]
+
