@@ -9,9 +9,8 @@ repos:
         - flake8-breakpoint
         - flake8-docstrings
         - pep8-naming
-        - flake8-import-order
+        - flake8-isort
       args:
         - "-j8"
-        - "--ignore=E203,E501,P103,D105"
+        - "--ignore=E203,E501,P103,D105,D401"
         - "--docstring-convention=numpy"
-        - "--import-order-style=edited"
