@@ -27,7 +27,7 @@ the specifications. Fix the issues until all the tests pass.
 
 For task 2 we will create a 1D array object patterned after numpy's
 [ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html), although we will completely
-disregard efficiency. Start by looking at task_1.py and fill in the implementation to meet the
+disregard efficiency. Start by looking at task_2.py and fill in the implementation to meet the
 following requirements:
 
 1. Implement the `__init__` to *optionally* take a Sequence (tuple, lists, etc.) as the first input argument.
